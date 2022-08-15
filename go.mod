@@ -3,8 +3,7 @@ module github.com/bufbuild/buf-language-server
 go 1.18
 
 require (
-	// TODO: The bufcli.NewModuleReaderAndCreateCacheDirsWithExternalPaths function was added to make this work.
-	github.com/bufbuild/buf v1.7.1-0.20220815213400-9f344df03fca
+	github.com/bufbuild/buf v1.7.1-0.20220815224357-1d50f8f572d6
 	github.com/jhump/protocompile v0.0.0-20220812162104-d108583e055d
 	github.com/spf13/cobra v1.5.0
 	github.com/spf13/pflag v1.0.5

@@ -3,6 +3,8 @@ github.com/BurntSushi/toml v0.3.1/go.mod h1:xHWCNGjB5oqiDr8zfno3MHue2Ht5sIBksp03
 github.com/benbjohnson/clock v1.3.0 h1:ip6w0uFQkncKQ979AypyG0ER7mqUSBdKLOgAle/AT8A=
 github.com/bufbuild/buf v1.7.1-0.20220815213400-9f344df03fca h1:Q1NDdWV/Y/JygucI2JTC7WAiIPXAB6nxUoBkjzeUves=
 github.com/bufbuild/buf v1.7.1-0.20220815213400-9f344df03fca/go.mod h1:iH+CxEitIpY/LxSKhVjQvuGX3gfNHke3uVK0VvDFGp4=
+github.com/bufbuild/buf v1.7.1-0.20220815224357-1d50f8f572d6 h1:wXJtUcgIjNFRE4icvVoA7EgPo3X1HjU8wvEOWB5c2Gg=
+github.com/bufbuild/buf v1.7.1-0.20220815224357-1d50f8f572d6/go.mod h1:iH+CxEitIpY/LxSKhVjQvuGX3gfNHke3uVK0VvDFGp4=
 github.com/bufbuild/connect-go v0.3.0 h1:B0vyZrTR11SNEYpodL6P0NzluDCsuqmr8CNKblXvVto=
 github.com/bufbuild/connect-go v0.3.0/go.mod h1:4efZ2eXFENwd4p7tuLaL9m0qtTsCOzuBvrohvRGevDM=
 github.com/census-instrumentation/opencensus-proto v0.2.1/go.mod h1:f6KPmirojxKA12rnyqOA5BBL4O983OfeGPqjHWSTneU=
