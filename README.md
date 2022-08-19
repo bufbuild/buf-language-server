@@ -16,7 +16,7 @@ Regardless of the LSP-compatible editor you use, you'll need to install
 `bufls` so that it's available on your `$PATH`.
 
 ```bash
-go install github.com/bufbuild/buf-language-server/cmd/bufls
+go install github.com/bufbuild/buf-language-server/cmd/bufls@latest
 ```
 
 ### Vim
