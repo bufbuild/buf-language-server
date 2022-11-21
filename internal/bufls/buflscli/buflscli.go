@@ -34,13 +34,13 @@ func NewEngine(
 	container appflag.Container,
 	disableSymlinks bool,
 ) (bufls.Engine, error) {
-	registryProvider, err := bufcli.NewRegistryProvider(ctx, container)
+	clientConfig, err := bufcli.NewConnectClientConfig(container)
 	if err != nil {
 		return nil, err
 	}
 	moduleReader, err := bufcli.NewModuleReaderAndCreateCacheDirsWithExternalPaths(
 		container,
-		registryProvider,
+		clientConfig,
 	)
 	if err != nil {
 		return nil, err
@@ -51,7 +51,7 @@ func NewEngine(
 		container,
 		storageosProvider,
 		runner,
-		registryProvider,
+		clientConfig,
 		moduleReader,
 	)
 	if err != nil {
