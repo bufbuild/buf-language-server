@@ -49,6 +49,7 @@ func NewHandler(logger *zap.Logger, engine Engine) Handler {
 // as well as the bufls sub-commands (e.g. 'bufls definition').
 type Engine interface {
 	Definition(context.Context, Location) (Location, error)
+	Format(ctx context.Context, path string) ([]protocol.TextEdit, error)
 }
 
 // NewEngine returns a new Protobuf language server engine.

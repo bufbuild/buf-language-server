@@ -19,6 +19,12 @@ import (
 	"context"
 	"errors"
 	"fmt"
+	"github.com/bufbuild/buf/private/buf/bufformat"
+	"github.com/bufbuild/buf/private/pkg/storage"
+	"github.com/bufbuild/buf/private/pkg/storage/storageos"
+	"go.lsp.dev/protocol"
+	"math"
+	"path/filepath"
 	"strings"
 
 	"github.com/bufbuild/buf/private/buf/buffetch"
@@ -67,6 +73,38 @@ func newEngine(
 		moduleFileSetBuilder: moduleFileSetBuilder,
 		imageBuilder:         imageBuilder,
 	}
+}
+
+func (e *engine) Format(ctx context.Context, path string) ([]protocol.TextEdit, error) {
+	protoBucket, err := storageos.NewProvider().NewReadWriteBucket(filepath.Dir(path))
+	if err != nil {
+		return nil, fmt.Errorf("failed to create a new bucket: %w", err)
+	}
+	module, err := bufmodule.NewModuleForBucket(ctx, protoBucket)
+	if err != nil {
+		return nil, fmt.Errorf("failed to create moduel for bucket: %w", err)
+	}
+	formattedBucket, err := bufformat.Format(ctx, module)
+	if err != nil {
+		return nil, err
+	}
+	fileName := filepath.Base(path)
+	formattedFile, err := storage.ReadPath(ctx, formattedBucket, fileName)
+	if err != nil {
+		return nil, fmt.Errorf("failed to read formatted file: %w", err)
+	}
+	return []protocol.TextEdit{
+		{
+			Range: protocol.Range{
+				Start: protocol.Position{},
+				End: protocol.Position{
+					Line:      math.MaxInt,
+					Character: math.MaxInt,
+				},
+			},
+			NewText: string(formattedFile),
+		},
+	}, nil
 }
 
 func (e *engine) Definition(ctx context.Context, location Location) (_ Location, retErr error) {

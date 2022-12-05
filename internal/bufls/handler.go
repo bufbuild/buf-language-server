@@ -173,7 +173,11 @@ func (h *handler) FoldingRanges(ctx context.Context, params *protocol.FoldingRan
 }
 
 func (h *handler) Formatting(ctx context.Context, params *protocol.DocumentFormattingParams) ([]protocol.TextEdit, error) {
-	return nil, errors.New("unimplemented")
+	path, err := uriToPath(params.TextDocument.URI)
+	if err != nil {
+		return nil, err
+	}
+	return h.engine.Format(ctx, path)
 }
 
 func (h *handler) Hover(ctx context.Context, params *protocol.HoverParams) (*protocol.Hover, error) {
