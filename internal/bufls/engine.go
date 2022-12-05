@@ -98,8 +98,8 @@ func (e *engine) Format(ctx context.Context, path string) ([]protocol.TextEdit, 
 			Range: protocol.Range{
 				Start: protocol.Position{},
 				End: protocol.Position{
-					Line:      math.MaxInt,
-					Character: math.MaxInt,
+					Line:      math.MaxUint32,
+					Character: math.MaxUint32,
 				},
 			},
 			NewText: string(formattedFile),
