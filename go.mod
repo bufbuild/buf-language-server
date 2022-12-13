@@ -3,8 +3,8 @@ module github.com/bufbuild/buf-language-server
 go 1.18
 
 require (
-	github.com/bufbuild/buf v1.9.1-0.20221118134832-7473ecc22a01
-	github.com/jhump/protocompile v0.0.0-20220812162104-d108583e055d
+	github.com/bufbuild/buf v1.10.0
+	github.com/bufbuild/protocompile v0.1.0
 	github.com/spf13/cobra v1.6.1
 	github.com/spf13/pflag v1.0.5
 	go.lsp.dev/jsonrpc2 v0.10.0
@@ -17,7 +17,6 @@ require (
 
 require (
 	github.com/bufbuild/connect-go v1.1.0 // indirect
-	github.com/bufbuild/protocompile v0.1.0 // indirect
 	github.com/cpuguy83/go-md2man/v2 v2.0.2 // indirect
 	github.com/davecgh/go-spew v1.1.1 // indirect
 	github.com/felixge/fgprof v0.9.3 // indirect
@@ -36,15 +35,15 @@ require (
 	github.com/segmentio/encoding v0.3.4 // indirect
 	github.com/stretchr/testify v1.8.1 // indirect
 	go.lsp.dev/pkg v0.0.0-20210717090340-384b27a52fb2 // indirect
-	go.opencensus.io v0.23.0 // indirect
+	go.opencensus.io v0.24.0 // indirect
 	go.opentelemetry.io/otel v1.11.1 // indirect
 	go.opentelemetry.io/otel/metric v0.33.0 // indirect
 	go.opentelemetry.io/otel/trace v1.11.1 // indirect
 	go.uber.org/atomic v1.10.0 // indirect
-	golang.org/x/net v0.1.0 // indirect
+	golang.org/x/net v0.2.0 // indirect
 	golang.org/x/sync v0.1.0 // indirect
-	golang.org/x/sys v0.1.0 // indirect
-	golang.org/x/term v0.1.0 // indirect
+	golang.org/x/sys v0.2.0 // indirect
+	golang.org/x/term v0.2.0 // indirect
 	golang.org/x/text v0.4.0 // indirect
 	gopkg.in/yaml.v3 v3.0.1 // indirect
 )
