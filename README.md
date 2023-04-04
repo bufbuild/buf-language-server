@@ -38,6 +38,28 @@ augroup END
 ```
 
   [vim-lsp]: https://github.com/prabirshrestha/vim-lsp
+  
+### Emacs
+With [lsp-mode] and [protobuf-mode], the only configuration you need is the followwing:
+``` elisp
+(require 'protobuf-mode)
+
+
+(require 'lsp-mode)
+
+(with-eval-after-load 'lsp-mode
+  (add-to-list 'lsp-language-id-configuration
+    '(protobuf-mode . "\\.proto\\'"))
+  (lsp-register-client
+    (make-lsp-client :new-connection (lsp-stdio-connection '("bufls" "serve"))
+                     :activation-fn (lsp-activate-on "\\.proto\\'")
+                     :server-id 'bufls)))
+
+(add-hook 'protobuf-mode-hook #'lsp-deferred)
+```
+
+[lsp-mode]: https://github.com/emacs-lsp/lsp-mode
+[protobuf-mode]: https://github.com/protocolbuffers/protobuf/blob/main/editors/protobuf-mode.el
 
 ## Supported features
 
