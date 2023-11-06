@@ -5,7 +5,7 @@ go 1.18
 require (
 	github.com/bufbuild/buf v1.11.0
 	github.com/bufbuild/protocompile v0.1.0
-	github.com/spf13/cobra v1.6.1
+	github.com/spf13/cobra v1.8.0
 	github.com/spf13/pflag v1.0.5
 	go.lsp.dev/jsonrpc2 v0.10.0
 	go.lsp.dev/protocol v0.12.0
@@ -17,7 +17,7 @@ require (
 
 require (
 	github.com/bufbuild/connect-go v1.4.0 // indirect
-	github.com/cpuguy83/go-md2man/v2 v2.0.2 // indirect
+	github.com/cpuguy83/go-md2man/v2 v2.0.3 // indirect
 	github.com/davecgh/go-spew v1.1.1 // indirect
 	github.com/felixge/fgprof v0.9.3 // indirect
 	github.com/gofrs/flock v0.8.1 // indirect
