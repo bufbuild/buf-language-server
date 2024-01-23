@@ -1,9 +1,11 @@
 # Buf Language Server
 
 > [!IMPORTANT]  
-> This repo is no longer under active development. However, Buf is working on a 
-> new language server implementation that will be integrated directly into the
+> **This repo is no longer under active development**.
+> 
+> However, Buf is working on a  new language server implementation that will be integrated directly into the
 > [Buf CLI](https://github.com/bufbuild/buf). 
+>
 > For more information, see [this PR](https://github.com/bufbuild/buf/pull/2662).
 
 
